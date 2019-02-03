@@ -1,2 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+   padding-top: 70px;
+}
+.starter-template {
+    padding: 3rem 1.5rem;
+    text-align: center;
+}
+
+.bg-red{
+  background-color: #b84d45
+}
+.wt-color{
+  color: rgba(255,255,255,.5);
+}
+.wt-bg{
+background-color: rgba(255,255,255,.5);
+}
+
+
+
 @import "~bootstrap/dist/css/bootstrap.css"

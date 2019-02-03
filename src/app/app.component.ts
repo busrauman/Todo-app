@@ -1,10 +1,20 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './component/login/login.component.html',
-  styleUrls: ['./component/login/login.component.css']
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
   title = 'TO-DO';
+
+  constructor() {
+    console.log("constructor app")
+
+}
+
+  ngOnInit(){
+    console.log("init app")
+
+  }
 }
