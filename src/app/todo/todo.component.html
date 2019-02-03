@@ -1,3 +1,29 @@
-<p>
-  todo works!
-</p>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <div class="jumbotron">
+        <h4 class="text-center">Todo List</h4>
+      </div>
+      <div class="input-group">
+        <input type="text" class="form-control" #todoTitle>
+          &nbsp;
+        <div class="input-group-addon hover-cursor " >
+          <i class="fa fa-plus-circle fa-2x" (click)="addTodo(todoTitle)"></i>
+        </div>
+      </div>
+      <br>
+      <hr>
+      <div class="row">
+        <ul class="list-group">
+          <li class="list-group-item" *ngFor="let item of todos">
+              <span class="hover-cursor text-danger pull-right ">
+                <i class="fa fa-trash-o fa-lg"></i>
+              </span>
+          </li>
+        </ul>
+
+      </div>
+    </div>
+  </div>
+</div>

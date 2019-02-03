@@ -16,4 +16,8 @@
   color:red;
   opacity: .6;
 }
+
+.hover-cursor{
+  cursor : pointer;
+}
 @import "~bootstrap/dist/css/bootstrap.css"

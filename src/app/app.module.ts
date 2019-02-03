@@ -13,7 +13,7 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import {Routes,Router,RouterModule} from '@angular/router';
 import {AppRoutingModule, routingComponents } from './app-routing.module';
 import { HomeComponent } from './home/home.component';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 @NgModule({
 
   declarations: [
@@ -25,7 +25,8 @@ import { HomeComponent } from './home/home.component';
   imports: [
     BrowserModule,
     ReactiveFormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule
   ],
   exports: [
    RouterModule
