@@ -10,7 +10,6 @@ import { Component } from '@angular/core';
 
 export class AppComponent {
   title = 'TO-DO';
-
   constructor() {
     console.log("constructor app")
 

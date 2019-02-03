@@ -12,15 +12,14 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 
 import {Routes,Router,RouterModule} from '@angular/router';
 import {AppRoutingModule, routingComponents } from './app-routing.module';
-
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
 
   declarations: [
     AppComponent,
    routingComponents,
-    TodoComponent,
-    NavBarComponent
+    NavBarComponent,
 
   ],
   imports: [

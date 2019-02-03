@@ -8,6 +8,8 @@ import {Routes,Router,RouterModule} from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 loginForm : FormGroup
+isFirstPage = true
+
   constructor(
     private fb :FormBuilder,
     private router: Router) {
@@ -22,17 +24,11 @@ loginForm : FormGroup
   }
 
   ngOnInit() {
-
     console.log("init login")
-
   }
-  goRegister() {
-    console.log("go register")
-    this.router.navigate(['register']);
-  }
-
   onSubmit(){
-    console.log("form",this.loginForm.value)
+    console.log("form", this.loginForm.value)
+    this.router.navigate(['todos']);
   }
 
 }

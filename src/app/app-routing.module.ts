@@ -1,12 +1,19 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { LoginComponent } from './login/login.component';     // Add this
-import { RegisterComponent } from './register/register.component';  // Add this
-const routes: Routes = [
-  {path: 'login',component: LoginComponent  },
-  {path : 'register', component:RegisterComponent}
-];
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 
+import {TodoComponent } from './todo/todo.component';
+import { HomeComponent } from './home/home.component';
+
+const routes: Routes = [
+  {path : 'home/register', component:RegisterComponent},
+  {path: 'home/login',component: LoginComponent},
+  {path : 'todos', component:TodoComponent},
+  {path : 'home', component:HomeComponent },
+  {path: '', pathMatch: 'prefix',redirectTo: 'home'
+}
+];
 @NgModule({
   imports: [
     RouterModule.forRoot(routes)
@@ -16,4 +23,4 @@ const routes: Routes = [
   ],
 })
 export class AppRoutingModule { }
-export const routingComponents = [LoginComponent,RegisterComponent]
+export const routingComponents = [LoginComponent,RegisterComponent,TodoComponent,HomeComponent]

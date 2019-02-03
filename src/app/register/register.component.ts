@@ -10,6 +10,7 @@ import {PasswordValidator } from '../validators/password.validator';
 export class RegisterComponent implements OnInit {
 
   registerForm : FormGroup
+  isFirstPage = true
 constructor(
       private fb :FormBuilder,
       private router: Router) {
