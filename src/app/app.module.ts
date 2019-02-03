@@ -14,6 +14,8 @@ import {Routes,Router,RouterModule} from '@angular/router';
 import {AppRoutingModule, routingComponents } from './app-routing.module';
 import { HomeComponent } from './home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {AuthenticationService}  from './service/authentication.service';
+import {HttpClientModule} from "@angular/common/http";
 @NgModule({
 
   declarations: [
@@ -26,12 +28,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserModule,
     ReactiveFormsModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpClientModule
   ],
   exports: [
    RouterModule
   ],
-  providers: [],
+  providers: [AuthenticationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

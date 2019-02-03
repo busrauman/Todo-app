@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {Routes,Router,RouterModule} from '@angular/router';
 import { Validators, FormBuilder, FormGroup, FormControl } from '@angular/forms';
 import {PasswordValidator } from '../validators/password.validator';
+import {AuthenticationService}  from '../service/authentication.service';
+
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -10,10 +12,11 @@ import {PasswordValidator } from '../validators/password.validator';
 export class RegisterComponent implements OnInit {
 
   registerForm : FormGroup
-  isFirstPage = true
 constructor(
       private fb :FormBuilder,
-      private router: Router) {
+      private router: Router,
+       private authService : AuthenticationService
+      ) {
       this.registerForm = this.fb.group({
         password: new FormControl('', Validators.required),
         email : new FormControl('', Validators.compose([
@@ -31,8 +34,11 @@ constructor(
 
   }
  onSubmit(){
-
-   console.log("form")
+   console.log("form",JSON.stringify(this.registerForm.value))
+   this.authService.register(JSON.stringify(this.registerForm.value)).subscribe(res => {
+     console.log("logine yönleniyor")
+     this.router.navigate(['home/login']);
+   })
  }
 
 }
