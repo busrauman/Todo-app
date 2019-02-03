@@ -9,12 +9,16 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { TodoComponent } from './todo/todo.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
+
+import {Routes,Router,RouterModule} from '@angular/router';
+import {AppRoutingModule, routingComponents } from './app-routing.module';
+
+
 @NgModule({
 
   declarations: [
     AppComponent,
-    LoginComponent,
-    RegisterComponent,
+   routingComponents,
     TodoComponent,
     NavBarComponent
 
@@ -22,9 +26,12 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
   imports: [
     BrowserModule,
     ReactiveFormsModule,
-
+    AppRoutingModule
+  ],
+  exports: [
+   RouterModule
   ],
   providers: [],
-  bootstrap: [LoginComponent]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

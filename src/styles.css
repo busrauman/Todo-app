@@ -1,22 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
-body {
-   padding-top: 70px;
-}
-.starter-template {
-    padding: 3rem 1.5rem;
-    text-align: center;
-}
-
-.bg-red{
-  background-color: #b84d45
-}
-.wt-color{
-  color: rgba(255,255,255,.5);
-}
-.wt-bg{
-background-color: rgba(255,255,255,.5);
-}
+.bg{
+    background: url('./assets/home.jpg') no-repeat center;
+    /* Full height */
+    height: 100%;
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    opacity: .7;
+  }
 
 
-
+.red-text{
+  color:red;
+  opacity: .6;
+}
 @import "~bootstrap/dist/css/bootstrap.css"

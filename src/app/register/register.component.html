@@ -1,3 +1,46 @@
-<p>
-  register works!
-</p>
+<!-- <app-nav-bar></app-nav-bar> -->
+<div class="container ">
+    <div class="row starter-template">
+      <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+        <div class="card card-signin my-5">
+          <div class="card-body">
+            <h5 class="card-title text-center ">Sign Up</h5>
+            <form [formGroup]="registerForm" class="form-signin">
+              <div class="form-label-group ">
+                <!-- <label for="inputEmail">Email address</label> -->
+                <input type="text" id="name" class="form-control" placeholder="Full Name" formControlName="name" required autofocus>
+
+              </div>
+              <p class="red-text" *ngIf="registerForm.get('name').invalid && registerForm.get('name').touched">Name is required</p>
+
+              <div class="form-label-group">
+                <!-- <label for="inputEmail">Email address</label> -->
+                <input type="email" id="email" class="form-control" placeholder="Email address" formControlName="email" required autofocus>
+                <p class="red-text" *ngIf="registerForm.get('email').invalid && registerForm.get('email').touched">E-mail is required & valid </p>
+
+              </div>
+
+              <div class="form-label-group">
+                <!-- <label for="inputEmail">Email address</label> -->
+                <input type="password" id="password" class="form-control" placeholder="Password" formControlName="password" required autofocus>
+                <p class="red-text" *ngIf="registerForm.get('password').invalid && registerForm.get('password').touched">Password is required </p>
+
+              </div>
+              <div class="form-label-group">
+                <!-- <label for="inputEmail">Email address</label> -->
+                <input type="text" id="confirmedPasword" class="form-control" placeholder="Confirm Password" formControlName="confirmedPassword">
+                <p class="red-text" *ngIf="registerForm.get('confirmedPassword').invalid && registerForm.get('confirmedPassword').touched">Confirmed Password is required </p>
+
+              </div>
+              <p class="red-text" *ngIf="registerForm.errors?.misMatch">Password do not match</p>
+
+
+              <hr class="my-4">
+              <button class="btn btn-md btn-primary btn-block" type="submit" [disabled]="!registerForm.valid">Sign up</button>
+                <hr class="my-4">
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

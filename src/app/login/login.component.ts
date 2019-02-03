@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Validators, FormBuilder, FormGroup, FormControl } from '@angular/forms';
-
+import {Routes,Router,RouterModule} from '@angular/router';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -8,7 +8,9 @@ import { Validators, FormBuilder, FormGroup, FormControl } from '@angular/forms'
 })
 export class LoginComponent implements OnInit {
 loginForm : FormGroup
-  constructor(private fb :FormBuilder) {
+  constructor(
+    private fb :FormBuilder,
+    private router: Router) {
     this.loginForm = this.fb.group({
       password: new FormControl('', Validators.required),
       email : new FormControl('', Validators.compose([
@@ -24,9 +26,12 @@ loginForm : FormGroup
     console.log("init login")
 
   }
+  goRegister() {
+    console.log("go register")
+    this.router.navigate(['register']);
+  }
 
   onSubmit(){
-
     console.log("form",this.loginForm.value)
   }
 
