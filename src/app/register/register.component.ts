@@ -28,8 +28,6 @@ constructor(
      },{validator : PasswordValidator})
         console.log("cont register")
     }
-
-
   ngOnInit() {
 
   }

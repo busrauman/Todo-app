@@ -5,14 +5,15 @@ import { RegisterComponent } from './register/register.component';
 
 import {TodoComponent } from './todo/todo.component';
 import { HomeComponent } from './home/home.component';
+import { TodoDetailComponent } from './todo-detail/todo-detail.component';
 
 const routes: Routes = [
   {path : 'home/register', component:RegisterComponent},
   {path: 'home/login',component: LoginComponent},
   {path : 'todos', component:TodoComponent},
   {path : 'home', component:HomeComponent },
-  {path: '', pathMatch: 'prefix',redirectTo: 'home'
-}
+  {path: '', pathMatch: 'prefix',redirectTo: 'home'},
+  {path : 'detail', component:TodoDetailComponent },
 ];
 @NgModule({
   imports: [
@@ -23,4 +24,4 @@ const routes: Routes = [
   ],
 })
 export class AppRoutingModule { }
-export const routingComponents = [LoginComponent,RegisterComponent,TodoComponent,HomeComponent]
+export const routingComponents = [LoginComponent,RegisterComponent,TodoComponent,HomeComponent,TodoDetailComponent]

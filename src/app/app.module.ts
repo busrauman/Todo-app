@@ -16,12 +16,17 @@ import { HomeComponent } from './home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {AuthenticationService}  from './service/authentication.service';
 import {HttpClientModule} from "@angular/common/http";
+import { TaskComponent } from './task/task.component';
+import {A2Edatetimepicker} from 'ng2-eonasdan-datetimepicker';
+import { FormsModule } from '@angular/forms';
+import { TodoDetailComponent } from './todo-detail/todo-detail.component';
 @NgModule({
 
   declarations: [
     AppComponent,
    routingComponents,
     NavBarComponent,
+    TaskComponent,
 
   ],
   imports: [
@@ -29,7 +34,9 @@ import {HttpClientModule} from "@angular/common/http";
     ReactiveFormsModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    A2Edatetimepicker,
+    FormsModule
   ],
   exports: [
    RouterModule
