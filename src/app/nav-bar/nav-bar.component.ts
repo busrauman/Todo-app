@@ -10,7 +10,9 @@ export class NavBarComponent implements OnInit {
   navbarOpen = false;
 username;
   constructor(private router : Router) {
-    //  this.username=JSON.stringify(localStorage.getItem("user").name)l
+     this.username=localStorage.getItem("username")
+    var re = /\"/gi;
+    this.username = this.username.replace(re,"")
   }
 
   ngOnInit() {

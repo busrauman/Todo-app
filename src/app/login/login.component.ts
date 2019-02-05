@@ -43,12 +43,9 @@ error
         //loggined
         localStorage.setItem("user" , JSON.stringify(res));
         localStorage.setItem("userId" , JSON.stringify(res["id"]));
+        localStorage.setItem("username" , JSON.stringify(res["name"]));
         localStorage.setItem("loggined" , 'true')
         this.router.navigate(['todos']);
-
-      console.log(  " heree",JSON.parse(localStorage.getItem("user")))
-      console.log(JSON.parse(localStorage.getItem("userId")))
-      console.log(JSON.parse(localStorage.getItem("loggined")))
 
       }else{
 
