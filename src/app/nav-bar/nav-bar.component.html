@@ -1,6 +1,6 @@
 <nav class="navbar  navbar-fixed-left navbar-expand-lg bg-dark">
   <a class="navbar-brand" href="#">
-    Brand
+    Todo App
   </a>
 
   <button class="navbar-toggler"  (click)="toggleNavbar()" type="button">
@@ -12,14 +12,10 @@
   [ngClass]="{ 'show': navbarOpen }">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-        <a class="nav-link" href="#">Item 1</a>
+        <a class="nav-link" href="#">{{username}}</a>
       </li>
-
       <li class="nav-item">
-        <a class="nav-link" href="#">Item 2</a>
-      </li>
-      <li class="nav-item ">
-        <a class="nav-link pull-right" href="#">Item 2</a>
+        <a  (click) = "logOut()" class=" btn nav-link pull-right" href="#">Logout</a>
       </li>
     </ul>
   </div>

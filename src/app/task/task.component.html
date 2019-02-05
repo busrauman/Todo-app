@@ -1,3 +1,33 @@
-<p>
-  task works!
-</p>
+<div class=" ">
+    <div class=" ">
+      <div class="col-sm-1 col-sm-3 col-md-5 mx-auto">
+        <div class="card ">
+          <div class="card-body">
+            <h5 class="card-title text-center ">Add Item To List</h5>
+            <form [formGroup]="taskForm" class="form-signin">
+
+              <div class="form-label-group ">
+                <input type="text" id="name" class="form-control" placeholder="Task Name" formControlName="name" required autofocus>
+                <p class="red-text" *ngIf="taskForm.get('name').invalid && taskForm.get('name').touched"> Name is required</p>
+
+              </div>
+              <br>
+              <div>
+                <input type="text" id="date" class="form-control" placeholder="Deadline" formControlName="date" required autofocus>
+                  <p class="red-text" *ngIf="taskForm.get('date').invalid && taskForm.get('date').touched"> Date is required</p>
+                </div>
+
+              <div class="form-label-group">
+                <label></label>
+                <textarea name="name" id="desc" rows="5" cols="80" class="form-control" placeholder="Description" formControlName="description" required autofocus> </textarea>
+                <p class="red-text" *ngIf="taskForm.get('description').invalid && taskForm.get('description').touched">Description is required </p>
+              </div>
+              <hr class="my-4">
+              <button class="btn btn-md btn-primary btn-block" type="submit" [disabled]="!taskForm.valid" (click)="onSubmit()">Add Task</button>
+              <hr class="my-4">
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

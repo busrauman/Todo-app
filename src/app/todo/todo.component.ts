@@ -23,7 +23,10 @@ options = {
   constructor(private todoService : TodoService,
     private authService : AuthenticationService,
     private router: Router) {
-    console.log("todos")
+    if(!this.authService.checkLogin()){
+      console.log("checkLogin in todos");
+      this.router.navigate(['home'])
+    }
    }
 
   ngOnInit() {

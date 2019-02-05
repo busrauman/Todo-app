@@ -11,14 +11,14 @@ const httpOptions = {
 export class TodoService {
 
   createTodoURI = ApiConstant.todoApi;
-
+  taskApi = ApiConstant.taskApi;
 
   constructor(private http:HttpClient) {
   }
 
   getAllTodoByUserId(id){
     console.log("gel all todos " ,id );
-    return this.http.get(this.createTodoURI +"/1/todos",{headers:httpOptions.headers});
+    return this.http.get(this.createTodoURI +"/"+ localStorage.getItem("userId") +"/todos",{headers:httpOptions.headers});
   }
 
   delete(id){
@@ -27,12 +27,21 @@ export class TodoService {
 
   createTodo(todo:Todo){
     //1 --> user ıd owner
-    return this.http.post(this.createTodoURI +"/1", todo,{headers:httpOptions.headers});
+    return this.http.post(this.createTodoURI +"/" + localStorage.getItem("userId"), todo,{headers:httpOptions.headers});
   }
 
+// task ID
   getTodo(id){
-    
 
+  }
+
+//todo id
+  getTaskOfTodo(id){
+
+  }
+  addTask(id,task){
+    console.log(task)
+    return this.http.post(this.taskApi +"/todo/"+id, task, {headers:httpOptions.headers});
   }
 
 }

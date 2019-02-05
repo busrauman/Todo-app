@@ -9,6 +9,7 @@ const httpOptions = {
 export class AuthenticationService {
 
   baseUrl = ApiConstant.userApi;
+  loginURI = this.baseUrl + "/login"
 
   constructor(private http:HttpClient) {
 
@@ -20,6 +21,15 @@ export class AuthenticationService {
 
   getUserById(id){
     return this.http.get(this.baseUrl +"/" +id,{headers:httpOptions.headers});
+  }
+
+  login(user){
+      return this.http.post(this.loginURI,user,{headers:httpOptions.headers});
+  }
+  checkLogin(){
+    return JSON.parse(localStorage.getItem("user"))
+     && JSON.parse(localStorage.getItem("userId"))
+     && JSON.parse(localStorage.getItem("loggined"));
   }
 
 }
