@@ -23,7 +23,7 @@
     "@angular/platform-browser": "^5.1.0",
     "@angular/platform-browser-dynamic": "^5.1.0",
     "@angular/router": "^5.1.0",
-    "bootstrap": "^4.2.1",
+    "bootstrap": "^4.3.1",
     "core-js": "^2.4.1",
     "font-awesome": "^4.7.0",
     "mydatepicker": "^2.6.6",
